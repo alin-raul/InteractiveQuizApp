@@ -10,7 +10,6 @@ Welcome to the **Quiz App** built with **Next.js**! This app allows users to tak
 - **MongoDB**: For database management.
 - **Mongoose**: An ODM for MongoDB, simplifying data modeling.
 - **React**: A JavaScript library for building user interfaces.
-- **Radix UI**: A collection of unstyled, accessible components for building high-quality design systems.
 - **uuid**: For generating unique identifiers.
 - **joi**: For schema validation.
 
