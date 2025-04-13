@@ -1,11 +1,9 @@
 import { fetchQuizData } from "../fetchData/page";
-import Navbar from "../components/Navbar";
 
 const quiz = async () => {
   const quizData = await fetchQuizData();
   return (
     <>
-      <Navbar links={[{ name: "Home", href: "/" }]} />
       <div className="max-w-screen-xl m-auto px-4 text-lg">
         <h2 className="font-bold text-2xl my-20 ml-2">
           All the quizzes questions and answers are available here for a look 👀

@@ -22,8 +22,8 @@ const MyButton = ({
 
   return (
     <div
-      className={`flex gap-2 justify-center items-center text-2xl font-bold px-4 py-2 rounded-2xl w-fit transition-all duration-300 ease-in-out ${
-        backgroundColor ? backgroundColor : "bg-violet-500"
+      className={`flex gap-2 justify-center items-center text-2xl font-bold font-[tiny] px-4 py-2 w-fit transition-all duration-300 ease-in-out ${
+        backgroundColor ? backgroundColor : "bg-accent"
       } ${glow} ${shadow} hover:brightness-125 cursor-pointer`}
       onClick={handleClick}
       style={{ backgroundColor: style }}

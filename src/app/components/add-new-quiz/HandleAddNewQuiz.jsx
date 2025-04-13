@@ -21,6 +21,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/mode-toggle";
+import { useQuiz } from "@/app/context/quiz-context";
 
 const HandleAddNewQuiz = ({
   openQuizDialog,
@@ -33,8 +34,8 @@ const HandleAddNewQuiz = ({
   },
   setQuizFormData,
   handleSaveQuizData,
-  quizData,
 }) => {
+  const { quizData } = useQuiz();
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedSubcategory, setSelectedSubcategory] = useState("");
   const [subcategories, setSubcategories] = useState([]);
@@ -125,16 +126,16 @@ const HandleAddNewQuiz = ({
 
   return (
     <>
-      <div className="mt-2 z-10">
-        <Button
-          variant="outline"
-          className="w-28 border-2 mx-2 border-teal-400 rounded-2xl bg-transparent hover:bg-teal-400 hover:text-violet-800 hover:font-extrabold"
+      <div className="flex justify-center items-center mt-2 z-10">
+        {/* <Button
+          className="w-28 rounded-xl mx-2 "
           onClick={() => setOpenQuizDialog(true)}
         >
           Add Quiz +
-        </Button>
-        <ModeToggle />
+        </Button> */}
+        {/* <ModeToggle /> */}
       </div>
+
       <Dialog open={openQuizDialog} onOpenChange={handleDialogClose}>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>

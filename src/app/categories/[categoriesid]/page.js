@@ -1,5 +1,4 @@
 import Card from "@/app/components/Card";
-import Navbar from "@/app/components/Navbar";
 import { fetchQuizData } from "@/app/fetchData/page";
 
 const categoriesPage = async ({ params }) => {
@@ -20,12 +19,6 @@ const categoriesPage = async ({ params }) => {
 
   return (
     <div>
-      <Navbar
-        links={[
-          { name: "Home", href: "/" },
-          { name: "All categories", href: "/categories" },
-        ]}
-      />
       <div className="flex flex-col gap-6 justify-around max-w-screen-xl m-auto px-4 pt-20 md:h-screen">
         <h1 className="text-6xl font-bold mx-12">
           <span className="font-normal">You chose the </span>
@@ -33,10 +26,10 @@ const categoriesPage = async ({ params }) => {
         </h1>
 
         <div className=" ">
-          <p className="text-lg font-normal mb-6 px-2 text-white/60">
+          <p className="text-lg font-normal mb-6 px-2 text-accent-foreground/60">
             Click on a category to begin a quiz.
           </p>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 border border-teal-300/20 bg-black/20 rounded-3xl p-4 ">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3  p-4 ">
             {subcategories.map((subcategory) => (
               <Card
                 key={subcategory.id}

@@ -16,7 +16,7 @@ const initialQuizCategoriesData = {
   questions: [quizCategoriesData],
 };
 
-const QuizOverview = ({ quizData }) => {
+const QuizOverview = () => {
   const [openQuizDialog, setOpenQuizDialog] = useState(false);
   const [loading, setLoading] = useState(false);
   const [quizFormData, setQuizFormData] = useState(initialQuizCategoriesData);
@@ -69,7 +69,6 @@ const QuizOverview = ({ quizData }) => {
         handleSaveQuizData={handleSaveQuizData}
         currentEditedQuizId={currentEditedQuizId}
         setCurrentEditedQuizId={setCurrentEditedQuizId}
-        quizData={quizData}
       />
     </div>
   );

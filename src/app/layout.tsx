@@ -4,6 +4,9 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Suspense } from "react";
+import { QuizProvider } from "./context/quiz-context";
+import { fetchQuizData } from "./fetchData/page";
+import Navbar from "./components/Navbar";
 
 const tiny = localFont({
   src: "/fonts/Tiny5-Regular.ttf",
@@ -23,11 +26,13 @@ export const metadata = {
   description: "My next Quiz app",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const quizData = await fetchQuizData();
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body
@@ -39,7 +44,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Suspense fallback={<Loading />}>{children}</Suspense>
+          <QuizProvider initialData={quizData}>
+            <Navbar />
+            <Suspense fallback={<Loading />}>{children}</Suspense>
+          </QuizProvider>
         </ThemeProvider>
       </body>
     </html>

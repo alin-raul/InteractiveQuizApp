@@ -5,47 +5,29 @@ function QuizCard({
   selectedAnswer,
   handleAnswerClick,
 }) {
-  const getOrdinalParts = (n) => {
-    const s = ["th", "st", "nd", "rd"];
-    const v = n % 100;
-    const suffix = s[(v - 20) % 10] || s[v] || s[0];
-    return { number: n, suffix };
-  };
-
-  const ordinal = getOrdinalParts(currentIndex + 1);
-
   return (
-    <div
-      className="rounded-3xl shadow-md text-lg p-6 my-4"
-      style={{
-        backgroundColor: currentQuiz.backgroundColor || "rgba(0, 0, 0, 0.4)",
-      }}
-    >
-      <h1 className="text-2xl mb-4 w-fit font-bold drop-shadow-md ">
-        <span>{ordinal.number}</span>
-        <span className="text-sm align-super ml-1 font-normal tracking-wide">
-          {ordinal.suffix}
+    <div className="text-lg py-12 px-8 my-5 rounded-[3rem] bg-accent-foreground">
+      <h1 className="text-xl mb-4 w-fit font-bold text-accent/60">
+        <span>
+          QUESTION {currentIndex + 1} OF {quizCategory.length}
         </span>
-        <span className=" ml-2 ">{`${quizCategory.toLowerCase()}`}</span>
-        <span className=""> Quiz</span>
       </h1>
       <hr />
-      <p className="font-semibold text-xl drop-shadow-md mt-8">
+      <p className="font-bold text-accent text-xl mt-8 mb-4">
         {currentQuiz.question}
       </p>
       <div>
         <div className="flex flex-col">
-          <ol className="my-2 drop-shadow-md">
+          <ol className="my-2">
             {currentQuiz.shuffledAnswers.map((answer, answerIndex) => (
               <li
                 key={answerIndex}
-                className={`text-white/60 drop-shadow-md cursor-pointer p-2 rounded-md border-2 my-3
-                          border-white/60 hover:bg-black/10 hover:text-white ${
-                            selectedAnswer ? "pointer-events-none" : ""
-                          }`}
+                className={`text-accent/80 cursor-pointer p-2 border my-4 rounded-2xl border-accent/60 hover:bg-[#5f56d6] hover:text-accent-foreground ${
+                  selectedAnswer ? "pointer-events-none" : ""
+                }`}
                 onClick={() => handleAnswerClick(answer)}
               >
-                {answer}
+                <span className="font-normal ml-4 text-2xl">{answer}</span>
               </li>
             ))}
           </ol>

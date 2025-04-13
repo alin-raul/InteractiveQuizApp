@@ -1,8 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import randomColor from "randomcolor";
-import Navbar from "../Navbar";
 import Results from "./Results";
 import QuizCard from "../QuizCard";
 import QuizAnswerResult from "./QuizAnswerResult";
@@ -81,20 +79,19 @@ const ClientQuiz = ({
 
   return (
     <div>
-      <Navbar links={[{ name: "See solutions?", href: "/solutions" }]} />
       <div className="m-auto h-screen flex flex-col justify-center">
         <div className="max-w-screen-md m-auto w-screen">
           <div
-            className={`absolute bottom-2 left-7 p-4 rounded-3xl text-center mb-6 bg-teal-500 text-violet-950 ${
+            className={`absolute bottom-2 left-7 p-4 text-center mb-6 border-b-5 border-b-accent-foreground/60 ${
               score === 0 ? "hidden" : ""
             }`}
           >
-            <h2 className="text-2xl font-bold">
+            <h2 className="text-2xl font-bold font-[tiny]">
               {score === 0
                 ? null
                 : score === 1
-                ? `${score} point of ${quizData.length}`
-                : `${score} points / ${quizData.length}`}
+                ? `${score}p OF ${quizData.length}`
+                : `${score}p's OF ${quizData.length}`}
             </h2>
           </div>
 
