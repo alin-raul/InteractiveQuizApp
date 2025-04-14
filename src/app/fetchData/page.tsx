@@ -3,11 +3,13 @@ import type { QuizData } from "../context/quiz-context";
 let cachedQuizData: QuizData | null = null;
 
 export const fetchQuizData = async () => {
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL;
+
   if (cachedQuizData) {
     return cachedQuizData;
   }
   try {
-    const apiResponse = await fetch("http://localhost:3000/api/get-quiz-data", {
+    const apiResponse = await fetch(`${baseUrl}/api/get-quiz-data`, {
       method: "GET",
       cache: "no-cache",
     });
