@@ -1,7 +1,14 @@
 import Link from "next/link";
 import RandomColorSetter from "./utils/RandomColorSetter";
+import type { QuizCategory } from "../context/quiz-context";
 
-const Card = ({ directory, category }) => {
+const Card = ({
+  directory,
+  category,
+}: {
+  directory: string;
+  category: QuizCategory;
+}) => {
   const categoryId = category.id;
   const { backgroundColor } = RandomColorSetter(categoryId);
 

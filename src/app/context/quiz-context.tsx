@@ -21,7 +21,7 @@ type Question = {
   _id: string;
 };
 
-type QuizCategory = {
+export type QuizCategory = {
   id: string;
   name: string;
   questions: Question[];
