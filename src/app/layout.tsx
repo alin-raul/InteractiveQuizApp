@@ -8,6 +8,8 @@ import { QuizProvider } from "./context/quiz-context";
 import { fetchQuizData } from "./fetchData/page";
 import Navbar from "./components/Navbar";
 
+export const dynamic = "force-dynamic";
+
 const tiny = localFont({
   src: "/fonts/Tiny5-Regular.ttf",
   variable: "--tiny-font",

@@ -1,6 +1,8 @@
 import Card from "@/app/components/Card";
 import { fetchQuizData } from "@/app/fetchData/page";
 
+export const dynamic = "force-dynamic";
+
 const categoriesPage = async ({ params }) => {
   const data = await fetchQuizData();
   console.log(params);

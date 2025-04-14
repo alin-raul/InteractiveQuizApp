@@ -1,5 +1,7 @@
 import { fetchQuizData } from "../fetchData/page";
 
+export const dynamic = "force-dynamic";
+
 const quiz = async () => {
   const quizData = await fetchQuizData();
   return (

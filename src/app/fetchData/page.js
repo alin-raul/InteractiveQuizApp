@@ -1,7 +1,3 @@
-import type { QuizData } from "../context/quiz-context";
-
-let cachedQuizData: QuizData | null = null;
-
 export const fetchQuizData = async () => {
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL;
 
@@ -20,7 +16,6 @@ export const fetchQuizData = async () => {
   try {
     const apiResponse = await fetch(`${baseUrl}/api/get-quiz-data`, {
       method: "GET",
-      cache: "no-cache",
     });
 
     if (!apiResponse.ok) {
