@@ -1,6 +1,4 @@
-import { fetchQuizData } from "../fetchData/page";
-
-export const dynamic = "force-dynamic";
+import { fetchQuizData } from "../fetchData/fetchQuizData";
 
 const quiz = async () => {
   const quizData = await fetchQuizData();

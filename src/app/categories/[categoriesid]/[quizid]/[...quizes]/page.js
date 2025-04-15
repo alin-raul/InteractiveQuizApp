@@ -1,7 +1,5 @@
-import { fetchQuizData } from "@/app/fetchData/page";
+import { fetchQuizData } from "@/app/fetchData/fetchQuizData";
 import HandleScore from "@/app/components/quiz-app/HandleScore";
-
-export const dynamic = "force-dynamic";
 
 const QuizPage = async ({ params }) => {
   const data = await fetchQuizData();

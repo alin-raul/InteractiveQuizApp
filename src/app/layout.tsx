@@ -5,10 +5,8 @@ import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Suspense } from "react";
 import { QuizProvider } from "./context/quiz-context";
-import { fetchQuizData } from "./fetchData/page";
+import { fetchQuizData } from "./fetchData/fetchQuizData";
 import Navbar from "./components/Navbar";
-
-export const dynamic = "force-dynamic";
 
 const tiny = localFont({
   src: "/fonts/Tiny5-Regular.ttf",
