@@ -15,8 +15,8 @@ const QuizApp = () => {
     <div id="my-div" style={{ display: "none" }}>
       <QuizOverview />
 
-      <div className="flex flex-col gap-20 justify-around max-w-screen-xl mx-auto px-4 md:gap-6 md:h-screen ">
-        <div className="flex flex-col gap-4 w-fit mx-auto flex-shrink-0">
+      <div className="flex flex-col gap-20 h-full justify-around max-w-screen-xl mx-auto px-4 md:gap-6">
+        <div className="flex flex-col gap-4 w-fit mx-auto flex-shrink-0 mt-28">
           <h2 className="font-bold text-5xl">Ready to challenge your brain?</h2>
           <p className="self-start ">
             Explore our diverse range of quizzes and discover new facts.

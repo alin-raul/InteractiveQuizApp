@@ -36,7 +36,7 @@ export default async function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${tiny.variable} antialiased font-[inter]`}
+        className={`${inter.variable} ${tiny.variable} antialiased font-[inter] relative`}
       >
         <ThemeProvider
           attribute="class"

@@ -5,9 +5,9 @@ import { ModeToggle } from "@/components/mode-toggle";
 
 const Navbar = () => {
   return (
-    <>
-      <div className="flex items-center w-full m-auto h-14 fixed top-0 left-0">
-        <div className="flex items-center max-w-screen-2xl w-full px-4 mx-auto bg-background">
+    <nav>
+      <div className="flex items-center w-full h-14 fixed top-0 z-50">
+        <div className="flex items-center max-w-screen-2xl w-full h-full px-4 mx-auto bg-background">
           <div className="flex gap-4 items-center w-fit">
             <Image
               src="/logo/nextquiz.webp"
@@ -42,7 +42,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </>
+    </nav>
   );
 };
 

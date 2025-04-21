@@ -16,7 +16,7 @@ const Card = ({
 
   return (
     <Link href={`${directory}`}>
-      <div className="flex flex-col justify-center items-center h-96 rounded-3xl customPurple hover:brightness-125 relative">
+      <div className="flex flex-col justify-center items-center h-96 rounded-3xl customPurple hover:brightness-125 relative z-10">
         <div
           className="w-4 h-4 border absolute top-5 right-5"
           style={{
