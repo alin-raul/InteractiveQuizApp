@@ -7,6 +7,8 @@ import { Suspense } from "react";
 import { QuizProvider } from "./context/quiz-context";
 import { fetchQuizData } from "./fetchData/fetchQuizData";
 import Navbar from "./components/Navbar";
+import { ClerkProvider } from "@clerk/nextjs";
+import Wrapper from "./components/wrapper/Wrapper";
 
 const tiny = localFont({
   src: "/fonts/Tiny5-Regular.ttf",
@@ -34,22 +36,26 @@ export default async function RootLayout({
   const quizData = await fetchQuizData();
 
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${inter.variable} ${tiny.variable} antialiased font-[inter] relative`}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
+    <ClerkProvider>
+      <html lang="en" suppressHydrationWarning>
+        <body
+          className={`${inter.variable} ${tiny.variable} antialiased font-[inter] relative`}
         >
-          <QuizProvider initialData={quizData}>
-            <Navbar />
-            <Suspense fallback={<Loading />}>{children}</Suspense>
-          </QuizProvider>
-        </ThemeProvider>
-      </body>
-    </html>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <QuizProvider initialData={quizData}>
+              <Navbar />
+              <Wrapper>
+                <Suspense fallback={<Loading />}>{children}</Suspense>
+              </Wrapper>
+            </QuizProvider>
+          </ThemeProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
